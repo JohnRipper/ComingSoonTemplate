@@ -1,0 +1,18 @@
+<form hx-post="{% url 'soon_core:home' %}" hx-target="#subscription-form-container" hx-swap="outerHTML">
+    {% csrf_token %}
+
+    <!-- This field is hidden from the user but holds the referral source value -->
+    {{ form.referral_source.as_hidden }}
+
+    <!-- This is the visible email field -->
+    <div class="form-group">
+        {{ form.email }}
+        {% if form.email.errors %}
+            <div class="error-message">
+                {{ form.email.errors.as_text }}
+            </div>
+        {% endif %}
+    </div>
+
+    <button type="submit">Subscribe</button>
+</form>

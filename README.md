@@ -5,6 +5,8 @@
 
 
 ```bash
+pip install django-solo
+pip install Pillow
 
 ```
 

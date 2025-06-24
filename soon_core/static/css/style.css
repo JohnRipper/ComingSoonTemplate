@@ -1,0 +1,226 @@
+/* static/css/style.css */
+
+/* --- 1. Imports & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --bg-dark: #0D1117;
+    --bg-medium: #161B22;
+    --border-color: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-primary: #58a6ff;
+    --accent-hover: #79c0ff;
+    --success-color: #2f81f7;
+    --error-color: #f85149;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* --- 2. General & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+h1, h2 {
+    color: #fff;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-secondary);
+}
+
+/* --- 3. Header & Hero Section --- */
+.header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    background-color: var(--bg-medium);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+/* --- 4. Subscription Form --- */
+#subscription-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#subscription-form-container form {
+    display: flex;
+    gap: 10px;
+}
+
+#subscription-form-container input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-medium);
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#subscription-form-container input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+}
+
+#subscription-form-container button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-primary);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#subscription-form-container button:hover {
+    background-color: var(--accent-hover);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.subscription-success {
+    background-color: rgba(47, 129, 247, 0.1);
+    border: 1px solid var(--success-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- 5. Footer --- */
+.footer {
+    margin-top: auto; /* Pushes footer to the bottom */
+    background-color: var(--bg-medium);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.footer .container {
+    padding: 0;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--accent-primary);
+}
+
+.footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    #subscription-form-container form {
+        flex-direction: column;
+    }
+}
+
+/* --- 7. YouTube Embed --- */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Optional: constrain max width */
+    margin: 3rem auto 0 auto;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* This makes the SVG take the color of the parent 'a' tag */
+}
